@@ -54,7 +54,7 @@ RUN apt-get install -y qtdeclarative5-dev;
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/eigenteam/eigen-git-mirror /tmp/eigen
-RUN mkdir /tmp/eigen-build && cd /tmp/eigen && git checkout 3.3.5 && cd - && cd /tmp/eigen-build && cmake . /tmp/eigen && make -j4 && make install;
+RUN mkdir /tmp/eigen-build && cd /tmp/eigen && git checkout 3.3.4 && cd - && cd /tmp/eigen-build && cmake . /tmp/eigen && make -j4 && make install;
 
 
 RUN git clone https://github.com/Nelson-numerical-software/nelson.git
