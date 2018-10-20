@@ -15,6 +15,6 @@ docker pull nelsonsoftware/nelson
 
  ## run docker
 ```bash
-docker run -ti nelson
+docker run -ti nelsonsoftware/nelson
 ```
 
