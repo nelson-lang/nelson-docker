@@ -37,6 +37,8 @@ RUN apt-get install -y liblapack-dev;
 RUN apt-get install -y liblapacke-dev;
 RUN apt-get install -y fftw3;
 RUN apt-get install -y fftw3-dev;
+RUN apt-get install -y libhdf5-dev;
+RUN apt-get install -y hdf5-tools;
 RUN apt-get install -y libasound-dev;
 RUN apt-get install -y portaudio19-dev;
 RUN apt-get install -y libsndfile1-dev;
@@ -59,7 +61,7 @@ RUN mkdir /tmp/eigen-build && cd /tmp/eigen && git checkout 3.3.4 && cd - && cd 
 
 RUN git clone https://github.com/Nelson-numerical-software/nelson.git
 WORKDIR "/nelson"
-RUN git checkout -b v0.2.11
+RUN git checkout -b v0.2.12
 
 ENV AUDIODEV null
 
