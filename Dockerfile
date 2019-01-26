@@ -1,5 +1,5 @@
 #==============================================================================
-# Copyright (c) 2016-2018 Allan CORNET (Nelson)
+# Copyright (c) 2016-2019 Allan CORNET (Nelson)
 #==============================================================================
 # LICENCE_BLOCK_BEGIN
 # This program is free software: you can redistribute it and/or modify
@@ -61,7 +61,7 @@ RUN mkdir /tmp/eigen-build && cd /tmp/eigen && git checkout 3.3.4 && cd - && cd 
 
 RUN git clone https://github.com/Nelson-numerical-software/nelson.git
 WORKDIR "/nelson"
-RUN git checkout -b v0.2.12
+RUN git checkout -b v0.3.1
 
 ENV AUDIODEV null
 
