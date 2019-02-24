@@ -61,7 +61,7 @@ RUN mkdir /tmp/eigen-build && cd /tmp/eigen && git checkout 3.3.4 && cd - && cd 
 
 RUN git clone https://github.com/Nelson-numerical-software/nelson.git
 WORKDIR "/nelson"
-RUN git checkout -b v0.3.1
+RUN git checkout -b v0.3.2
 
 ENV AUDIODEV null
 
