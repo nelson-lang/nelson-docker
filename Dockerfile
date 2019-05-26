@@ -20,6 +20,7 @@
 FROM debian:buster
 MAINTAINER Allan CORNET "nelson.numerical.computation@gmail.com"
 
+
 RUN apt-get update
 RUN apt-get install -y build-essential;
 RUN apt-get install -y autotools-dev;
@@ -56,6 +57,7 @@ RUN apt-get install -y qtdeclarative5-dev;
 RUN apt-get install -y libhdf5-dev;
 RUN apt-get install -y hdf5-tools;
 RUN apt-get install -y libmatio-dev;
+RUN apt-get install -y libslicot0;
 
 RUN rm -rf /var/lib/apt/lists/*
 
@@ -70,11 +72,11 @@ RUN mkdir /tmp/eigen-build && cd /tmp/eigen && git checkout 3.3.7 && cd - && cd 
 
 RUN git clone https://github.com/Nelson-numerical-software/nelson.git /nelson
 WORKDIR "/nelson"
-RUN git checkout -b v0.3.4
+RUN git checkout -b v0.3.5
 
 ENV AUDIODEV null
 
-RUN cmake -G "Unix Makefiles"
+RUN cmake -G "Unix Makefiles" .
 RUN make -j4
 
 RUN make buildhelp
