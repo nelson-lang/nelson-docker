@@ -58,6 +58,7 @@ RUN apt-get install -y libhdf5-dev;
 RUN apt-get install -y hdf5-tools;
 RUN apt-get install -y libmatio-dev;
 RUN apt-get install -y libslicot0;
+RUN apt-get install -y zlib1g-dev;
 
 RUN rm -rf /var/lib/apt/lists/*
 
@@ -72,7 +73,7 @@ RUN mkdir /tmp/eigen-build && cd /tmp/eigen && git checkout 3.3.7 && cd - && cd 
 
 RUN git clone https://github.com/Nelson-numerical-software/nelson.git /nelson
 WORKDIR "/nelson"
-RUN git checkout -b v0.3.5
+RUN git checkout -b v0.3.6
 
 ENV AUDIODEV null
 
