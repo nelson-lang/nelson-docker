@@ -9,6 +9,7 @@ docker build -t nelson .
 ```
 
 ## download nelson image
+
 ```bash
 docker pull nelsonsoftware/nelson
 ```
@@ -18,3 +19,7 @@ docker pull nelsonsoftware/nelson
 docker run -ti nelsonsoftware/nelson
 ```
 
+With graphical user interface:
+```bash
+docker run -it --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --entrypoint /nelson/bin/linux64/nelson-gui nelsonsoftware/nelson
+```

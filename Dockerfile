@@ -1,5 +1,5 @@
 #==============================================================================
-# Copyright (c) 2016-2019 Allan CORNET (Nelson)
+# Copyright (c) 2016-present Allan CORNET (Nelson)
 #==============================================================================
 # LICENCE_BLOCK_BEGIN
 # This program is free software: you can redistribute it and/or modify
@@ -51,6 +51,8 @@ RUN apt-get install -y qtdeclarative5-dev;
 RUN apt-get install -y libqt5webkit5-dev;
 RUN apt-get install -y libsqlite3-dev;
 RUN apt-get install -y qt5-default qttools5-dev-tools;
+RUN apt-get install -y qml-module-qtquick-controls;
+RUN apt-get install -y qml-module-qtquick-dialogs;
 RUN apt-get install -y libqt5opengl5-dev;
 RUN apt-get install -y qtbase5-private-dev;
 RUN apt-get install -y qtdeclarative5-dev;
@@ -85,5 +87,6 @@ RUN make -j4
 RUN make get_module_skeleton
 RUN make buildhelp
 RUN make tests_minimal
+RUN xvfb-run -a /nelson/bin/linux64/nelson-adv-cli -e "doc;exit"
 
 ENTRYPOINT ["/nelson/bin/linux64/nelson-cli"]
