@@ -75,14 +75,15 @@ WORKDIR "/nelson"
 RUN git checkout -b v0.6.4
 
 ENV AUDIODEV null
+ENV PATH="/usr/lib/x86_64-linux-gnu/qt5/bin/:${PATH}"
 
 RUN cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" .
 RUN cmake --build . -- -j $(nproc)
-RUN cmake --build . -- -j $(nproc) get_module_skeleton
+RUN cmake --build . -- get_module_skeleton
 
-RUN cmake --build . -- -j $(nproc) buildhelp
-RUN cmake --build . -- -j $(nproc) tests_minimal
+RUN cmake --build . -- buildhelp
+RUN cmake --build . -- tests_minimal
 
-RUN xvfb-run -a /nelson/bin/linux64/nelson-adv-cli -e "doc;exit"
+RUN xvfb-run -a /nelson/bin/linux/nelson -adv-cli -e "doc;exit"
 
-ENTRYPOINT ["/nelson/bin/linux64/nelson-cli"]
+ENTRYPOINT ["/nelson/bin/linux/nelson-cli"]
