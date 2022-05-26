@@ -25,7 +25,7 @@ docker run -ti nelsonsoftware/nelson
 With graphical user interface:
 
 ```bash
-docker run -it --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --entrypoint /nelson/bin/linux64/nelson-gui nelsonsoftware/nelson
+docker run -it --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --entrypoint /nelson/bin/linux/nelson-gui nelsonsoftware/nelson
 ```
 
 ## Release on dockerhub
@@ -34,7 +34,7 @@ docker run -it --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-un
 docker rmi $(docker images -q) -f
 docker system prune -a
 
-docker build -t nelsonsoftware/nelson:latest -t nelsonsoftware/nelson:v0.6.2 .
-docker push  nelsonsoftware/nelson:v0.6.2
+docker build -t nelsonsoftware/nelson:latest -t nelsonsoftware/nelson:v0.6.5 .
+docker push  nelsonsoftware/nelson:v0.6.5
 docker push  nelsonsoftware/nelson:latest
 ```
