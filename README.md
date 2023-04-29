@@ -34,7 +34,8 @@ docker run -it --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-un
 docker rmi $(docker images -q) -f
 docker system prune -a
 
-docker build -t nelsonsoftware/nelson:latest -t nelsonsoftware/nelson:v0.7.3 .
-docker push  nelsonsoftware/nelson:v0.7.3
+docker build -t nelsonsoftware/nelson:latest -t nelsonsoftware/nelson:v0.7.4 .
+docker push  nelsonsoftware/nelson:v0.7.4
 docker push  nelsonsoftware/nelson:latest
+
 ```
