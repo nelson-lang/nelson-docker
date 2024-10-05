@@ -33,9 +33,14 @@ docker run -ti nelsonsoftware/nelson
 docker rmi $(docker images -q) -f
 docker system prune -a
 
-export NELSON_VERSION=1.7.0
-docker build -t nelsonsoftware/nelson:latest -t nelsonsoftware/nelson:v$NELSON_VERSION .
+
+export NELSON_VERSION=1.8.0
+export NELSON_VERSION_TAG=4314
+
+docker build --build-arg NELSON_VERSION=$NELSON_VERSION --build-arg NELSON_VERSION_TAG=$NELSON_VERSION_TAG -t nelsonsoftware/nelson:latest -t nelsonsoftware/nelson:v$NELSON_VERSION .
+
 docker push  nelsonsoftware/nelson:v$NELSON_VERSION
 docker push  nelsonsoftware/nelson:latest
+
 
 ```
