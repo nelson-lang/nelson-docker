@@ -34,7 +34,7 @@ docker rmi $(docker images -q) -f
 docker system prune -a
 
 
-export NELSON_VERSION=1.15.0
+export NELSON_VERSION=1.16.0
 export NELSON_VERSION_TAG=5475
 
 docker build --build-arg NELSON_VERSION=$NELSON_VERSION --build-arg NELSON_VERSION_TAG=$NELSON_VERSION_TAG -t nelsonsoftware/nelson:latest -t nelsonsoftware/nelson:v$NELSON_VERSION .
